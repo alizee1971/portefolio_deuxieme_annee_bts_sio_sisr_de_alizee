@@ -1,0 +1,792 @@
+/* =========================
+   RÉGLAGES GÉNÉRAUX
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Calibri, sans-serif;
+    background-color: rgb(4, 208, 215);
+    color: #263238;
+}
+
+/* =========================
+   TITRES EXISTANTS
+========================= */
+
+.h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(22, 4, 215);
+    margin-bottom: 20px;
+}
+
+.h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgb(22, 4, 215);
+    margin-bottom: 15px;
+}
+
+.h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0c16df;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.h4,
+.h5,
+.h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0c16df;
+}
+
+/* Texte normal */
+p,
+li {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Texte important sans modifier le HTML */
+strong,
+.important {
+    font-weight: 700;
+    color: #1f1ccf;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    display: none;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+section:target {
+    display: block;
+}
+
+#presentation {
+    display: block;
+}
+
+#presentation:not(:target) {
+    display: block;
+}
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    width: 100%;
+    background-color: rgb(22, 4, 215);
+}
+
+nav > ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav > ul > li {
+    float: left;
+    position: relative;
+}
+
+nav a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav > ul > li > a {
+    padding: 20px 30px;
+    color: #ffffff;
+}
+
+nav > ul > li:hover > a {
+    padding: 15px 30px 20px;
+    background-color: rgb(4, 171, 248);
+}
+
+/* =========================
+   SOUS-MENU
+========================= */
+
+.submenu {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li:hover .submenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 270px;
+    background-color: rgb(17, 176, 240);
+}
+
+.submenu li a {
+    display: block;
+    width: 270px;
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #0928ec;
+    background-color: #ffffff;
+}
+
+.submenu li:hover a {
+    color: #eeeeee;
+    background-color: rgb(22, 4, 215);
+    font-weight: 700;
+}
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-mobile {
+    display: none;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+nav input[type="checkbox"]:checked ~ ul {
+    display: block;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+.cert-rect,
+.cert-recta {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    width: 100%;
+    min-height: 220px;
+
+    margin: 25px 0;
+    padding: 20px;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+
+    text-align: left;
+}
+
+/* Image placée complètement à droite */
+.cert-rect img,
+.cert-recta img {
+    flex: 0 0 250px;
+
+    width: 250px;
+    height: 180px;
+
+    object-fit: contain;
+    object-position: center;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+/* Rectangle bleu clair placé à gauche */
+.cert-desc {
+    flex: 1;
+
+    min-height: 150px;
+    padding: 22px;
+
+    background-color: rgb(180, 240, 250);
+    border: 2px solid rgb(29, 191, 236);
+    border-radius: 15px;
+
+    color: rgb(22, 4, 215);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Titre du récapitulatif */
+.cert-desc h3,
+.cert-desc h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    color: rgb(22, 4, 215);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Paragraphes du récapitulatif */
+.cert-desc p {
+    margin: 8px 0;
+    color: rgb(22, 4, 215);
+}
+
+/* Informations importantes */
+.cert-desc strong {
+    color: rgb(22, 4, 215);
+    font-weight: 700;
+}
+
+/* Version mobile */
+@media screen and (max-width: 680px) {
+    .cert-rect,
+    .cert-recta {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .cert-rect img,
+    .cert-recta img {
+        flex: none;
+        width: 100%;
+        height: 200px;
+    }
+
+    .cert-desc {
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+    }
+}
+
+/* /* =========================
+   BLOCS CERTIFICATIONS
+========================= */
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+/* Image de chaque certification */ /*
+.cert-rect img,
+.cert-recta img {
+    display: block;
+    flex: 0 0 220px;
+    width: 220px;
+    height: 150px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+} */
+
+/* Texte situé dans le rectangle bleu clair */ /*
+.cert-desc {
+    flex: 1;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(180, 240, 250);
+    border-radius: 12px;
+    color: #0c16df;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+} */
+
+/* Titre dans le récapitulatif */ /*
+.cert-desc h3,
+.cert-desc h4 {
+    margin-top: 0;
+    color: rgb(22, 4, 215);
+    font-weight: 700;
+} */
+
+/* Si le texte contient des informations importantes */ /*
+.cert-desc strong {
+    color: rgb(22, 4, 215);
+    font-weight: 700;
+} */
+
+/* Chaque certification contient une image et un texte */ /*
+.cert-rect,
+.cert-recta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    min-height: 190px;
+
+    margin: 20px 0;
+    padding: 15px;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+
+    text-align: left;
+} */
+
+/* Certification plus grande */ /*
+.cert-recta {
+    min-height: 230px;
+} */
+
+/* Adaptation pour téléphone */ /*
+@media screen and (max-width: 680px) {
+    .cert-rect,
+    .cert-recta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .cert-rect img,
+    .cert-recta img {
+        width: 100%;
+        height: 180px;
+        flex-basis: auto;
+    }
+
+    .cert-desc {
+        width: 100%;
+        padding: 15px;
+    }
+}
+*/
+
+/* =========================
+   BOUTON
+========================= */
+
+input[type="submit"] {
+    padding: 10px 20px;
+    color: #0c16df;
+    background-color: rgb(29, 191, 236);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: greenyellow;
+}
+
+/* =========================
+   VERSION MOBILE
+========================= */
+
+@media screen and (max-width: 680px) {
+    .menu-mobile {
+        display: block;
+        padding: 12px 0;
+        color: #ffffff;
+        background-color: rgba(29, 197, 151, 0.97);
+        text-align: center;
+    }
+
+    nav > ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav > ul > li {
+        float: none;
+        width: 100%;
+    }
+
+    nav ul li a,
+    nav ul li:hover a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav li:hover .submenu {
+        position: static;
+        display: block;
+        min-width: 100%;
+    }
+
+    .submenu li a {
+        width: 100%;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .h1 {
+        font-size: 1.7rem;
+    }
+
+    .h2 {
+        font-size: 1.4rem;
+    }
+
+    .h3 {
+        font-size: 1.15rem;
+    }
+
+    .cert-rect,
+    .cert-recta {
+        float: none;
+        width: 100%;
+        min-height: auto;
+        margin: 0 0 15px;
+    }
+}
+/*body{
+    background-color: rgb(4, 208, 215);
+    border-radius: 15px;
+}
+
+    /* Alizée Chéret-Guillet 
+body{
+    font-family: Verdana, Calibri, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+*/
+/*
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    display: none;
+}
+
+.h1{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+.h2{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+.h3{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+.h4{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+.h5{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+.h6{
+    font-size: 16px;
+    color: rgb(22, 4, 215);
+}
+
+section:target{
+    display: block;
+}
+
+#presentation{
+    display: block;
+}
+
+#presentation:not(:target){
+    display: block;
+}
+
+nav > ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li{
+    list-style: none;
+}
+
+nav > ul > li{
+    float: left;
+}
+
+.submenu{
+    display: none;
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+.menu-mobile{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    background-color: rgb(22, 4, 215);
+}
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+nav > ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: inline-block;
+    text-align: none;
+}
+
+nav > ul > li > a{
+    padding: 20px 30px;
+    color: #FFF
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}
+
+@media screen and (max-width : 680px){
+    .menu-mobile {
+        display: block;
+        color: #fff;
+        background-color: rgba(29, 197, 151, 0.97);
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    nav ul{
+        display: none;
+    }
+    nav ul li, nav ul li a {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0px 10px 0px;
+    }
+
+    nav li:hover .submenu{
+        display: block;
+        position: static;
+    }
+}
+
+.submenu li a{
+    padding: 15px 30;
+    font-size: 13px;
+    color: #0928ec;
+    width: 270px;
+}*/
+
+/*.menu-html:hover{
+    border-top: 5px solid aqua;
+    background-color: black;
+}
+
+.menu-css:hover{
+    border-top: 5px solid #06ffc9;
+    background-color: black;   
+}
+
+.menu-basededonne:hover{
+    border-top: 5px solid #9ee8ff;
+    background-color: black;
+}
+
+.menu-php:hover{
+    border-top: 5px solid #d209ec;
+    background-color: black;
+}
+
+.menu-missions:hover{
+    border-top: 5px solid #2ef8ee;
+    background-color: black;
+}
+
+.menu-certifications:hover{
+    border-top: 5px solid #05f8c3;
+    background-color: black;
+}
+
+.menu-js:hover{
+    border-top: 5px solid #f504b9;
+    background-color: black;   
+}
+
+.menu-contact:hover{
+    border-top: 5px solid #fc0707;
+    background-color: black;   
+}
+*/
+/*
+nav > ul > li:hover a{
+    padding: 15px 30px 20px 30px;
+} */
+/*
+.menu-html .submenu{
+    background-color: rgb(17, 176, 240);
+}
+
+.menu-css .submenu{
+    background-color: rgb(16, 231, 113);
+}
+
+.menu-js .submenu{
+    background-color: rgb(250, 5, 209);
+}
+
+.menu-contact .submenu{
+    background-color: rgb(4, 171, 248);
+}
+
+.menu-basededonne .submenu {
+    background-color: rgb(133, 237, 255);
+}
+
+.menu-php .submenu {
+    background-color: rgb(155, 94, 255);
+}
+
+.menu-missions .submenu {
+    background-color: rgb(243, 52, 52);
+}
+
+.menu-certifications .submenu {
+    background-color: #05f8c3;
+}
+*/
+/*
+.submenu li:hover a{
+    color: #EEE;
+    font-weight: bold;
+}*/
+/*
+.menu-html .submenu li:hover{
+    background-color: rgb(7, 107, 236);
+}
+
+.menu-css .submenu li:hover{
+    background-color: rgb(55, 238, 9);
+}
+
+.menu-js .submenu li:hover{
+    background-color: rgb(250, 5, 217);
+}
+
+.menu-contact .submenu li:hover{
+    background-color: aqua;
+}
+*/
+/*
+.menu-mobile{
+    display: none;
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+nav input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+
+.cert-rect{
+    background-color: rgb(29, 191, 236);
+    color: #0c16df;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    width: 400px;
+    height: 200px;
+    align-items: left;
+    float: right;
+}
+
+.cert-recta{
+    background-color: rgb(29, 191, 236);
+    color: #0c16df;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    width: 400px;
+    height: 340px;
+    align-items: left;
+    float: right;
+}
+
+
+.cert-desc{
+    font-size: 14px;
+    color: #0c16df;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+*/
+/*.cert-rect {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}*/
+/*
+input[type="submit"]{
+    background-color: rgb(29, 191, 236);
+    color: #0c16df;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: greenyellow;
+}*/

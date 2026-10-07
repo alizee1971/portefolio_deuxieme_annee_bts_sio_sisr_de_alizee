@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="totale.css">
+        <!-- Alizée Chéret-Guillet -->
+</head>
+<body>
+    <h1>Voiçi la veille technologique que j'ai choisis : La cryptographie</h1>
+    <p>La cryptographie, c'est l'art de coder les messages pour les rendre secrets.</p>
+    <p> Définitions : </p>
+    <ul>
+        <li>Chiffrement : processus de transformation d'un message clair en un message chiffré, de manière à le rendre illisible pour toute personne qui ne possède pas la clé de déchiffrement.</li>
+        <li>Déchiffrement : processus inverse du chiffrement, qui consiste à transformer un message chiffré en son message clair d'origine, à l'aide de la clé de déchiffrement appropriée.</li>
+        <li>Cryptogramme : message chiffré</li>
+        <li></li>
+    </ul>
+    <p>Pourquoi coder ? En temps de guerre, de paix, en temps de crise... avoir des secrets, c'est du pouvoir. 
+       Et parce que cela permet de protéger les informations sensibles contre les accès non autorisés.</p>
+
+
+
+       <!-- Le terme LoRaWAN® signifie Long Range Wide Area Network ou réseau étendu à longue portée. Il s'agit d'un protocole radio de télécommunication qui permet la transmission de petits paquets de données en bas débit, particulièrement adapté aux objets connectés -->
+    <!-- <h2>Quesque la cryptographie ? Et son évolutions.</h2>
+    <p>La cryptographie consiste à transformer des données chiffrées grâce à un algorithme et une clé de chiffrement.</p>
+    <p>Exemple de principe : Texte normal → on va le chiffrée → texte devient donc illisible. Pour le rendre lisible on va donc partir du texte chiffré → on va le déchiffré → texte normal.</p>
+    <h3>Son évolutions :</h3>
+    <p>Le chiffrements classiques :
+        <ul>
+            <li>Le chiffre de César</li>
+            <li>Le chiffre de Vigenère</li> -->
+            <!--<li>Le chiffre de Vernam : c'est un chiffrement par flux qui utilise une clé de même longueur que le message à chiffrer, et qui est combinée avec le message à l'aide d'une opération XOR.</li>--> 
+        <!--</ul>
+    </p>
+    <p>Le chiffre de césar consiste a décale chaque lettre de l'alpabet d'un nombre fixe.</p>
+    <p>Exemple avec un décalage de 3 :</p>
+    <img src="Capture d’écran 2026-05-17 162857.png" width="1700" height="200">
+    <p>La si je veux chiffrer "BONJOUR", avec un décalage de 3, je décale chaque lettre de 3 positions dans l'alphabet, j'obtiendrais "ERQMRXU".</p>
+    <p>Pour déchiffré je vais le processus de déchiffrement mais en sens inverse donc "ERQMRXU", devient "BONJOUR", si je le déchiffre.</p>
+    <p>Pour une phrase, si je veux la chiffrer comme par exemple La paix est victoire, j'enleve les espaces et les ponctuations et je considérez tout en majuscule, avec un décalage de 5, j'obtiendrais "QFUFNCJXYANHYTNWJ".</p>
+    <p>Inconvénients :</p>
+    <ul>
+        <li>Il n'y a que 26 décalages possibles (0 à 25). Même sans ordinateur, un cryptanalyste peut essayer tous les décalages en quelques minutes.</li> -->
+         <!-- <li>Ne protège pas contre les attaques par fréquence : Les lettres les plus courantes dans une langue apparaissent plus fréquemment dans le texte chiffré, ce qui permet à un attaquant de deviner le message original en analysant la fréquence des lettres.</li> -->
+    <!--</ul>
+    <p>Le chiffre de vigenère invente par Blaise de Virgène publie son systéme en 1586. Il restera inoviable pendant 300 ans jusqu'en 1854.</p>
+    <p>Au lieu d'un décalage fixe (comme 3 chez César), on utilise une clé qui donne un décalage DIFFÉRENT pour chaque lettre.</p>
+    <p>Exemple : avec la clé "SECRET", chaque lettre de la clé donne un décalage.</p>
+    <ul>
+        <li>S → décalage de 18 (19 lettre)</li>
+        <li>E → décalage de 4 (5 lettre)</li>
+        <li>C → décalage de 2 (3 lettre)</li>
+        <li>R → décalage de 17 (18 lettre)</li>
+        <li>E → décalage de 4 (5 lettre)</li>
+        <li>T → décalage de 19 (20 lettre)</li>
+    </ul>
+    <p>La clé répète autant de fois que nécessaire pour couvrir tout le message.</p>
+    <p>Exemple : 
+        Clé répétée : SECRET
+        Message clair : BONJOURMESSIEURS
+        On va alligner la clé avec le message clair :
+    </p>
+    <img src="Capture d’écran 2026-05-17 165852.png" width="1600" height="200">
+    <h4>Les grandes familles de chiffres modernes : </h4>
+    <ol>
+        <li>La cryptographie symétrique (à clé secrète): Utilise la même clé pour chiffrer et déchiffrer les données.
+            <img src="Capture d’écran 2026-05-17 172139.png" width="1600" height="600">
+            <p>Avantages : rapidité, efficace</p>
+            <p>Inconvénients : la distribution de la clé peut être complexe, une clé par couple d'interlocuteurs</p>
+            <p>Exemples : AES, DES.</p>
+        </li>
+        <li>Chiffrement asymétrique : Utilise une paire de clés (une clé publique (connus de tous) pour chiffrer et une clé privée (secrète) pour déchiffrer).
+            <img src="bitpanda-academy-expert-20-quest-ce-que-le-chiffrement-asymetrique-infographic.avif" width="1600" height="700">
+            <p>Avantage : Pas de probléme de distribution de clé.</p>
+            <p>Inconvénient : Plus lent que le chiffrement symétrique.</p>
+            <p>Exemples : RSA, ...</p>
+        </li>
+        <li>Hachage : Transforme les données en une valeur de taille fixe, souvent utilisé pour garantir l'intégrité des données.
+            <img src="télécharger.webp" width="1600" height="700">
+            <p>Principe : Fonction à sens unique.</p>
+            <p>Usage : intégrité, mots de passe</p>
+            <p>Exemples : MD5, SHA-256.</p>
+        </li>
+    </ol> -->
+    <!-- <p>Voiçi, la table de vigenère :</p> -->
+    <!--<img src="Capture d’écran 2026-05-17 172554.png"" width="1600" height="2000"> -->
+
+</body>
+</html>
